@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Words</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<h1> Words </h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Translation</th>
+        <th>sentence</th>
+    </tr>
+
+    <tr th:each="word : ${words}">
+        <td th:text="${word.id}"></td>
+        <td><a th:href="@{/words/{id}(id=${word.id})}" th:text="${word.name}"></a></td>
+        <td th:text="${word.translation}"></td>
+        <td th:text="${word.sentence}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
